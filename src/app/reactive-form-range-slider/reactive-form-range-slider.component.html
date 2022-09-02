@@ -1,0 +1,14 @@
+<form [formGroup]="sliderForm">
+  <input
+    type="text"
+    formControlName="sliderInput"
+    [value]="sliderForm.value.sliderControl[0]"
+  />
+  <button (click)="updateSliderControl()" formControlName="testButton">
+    test
+  </button>
+  <p>Low value: {{ sliderForm.value.sliderControl[0] }}</p>
+  <p>High value: {{ sliderForm.value.sliderControl[1] }}</p>
+  <p><button (click)="resetForm()">Reset</button></p>
+  <ngx-slider [options]="options" formControlName="sliderControl"></ngx-slider>
+</form>
